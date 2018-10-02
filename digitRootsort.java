@@ -1,3 +1,5 @@
+
+
 public  Integer[] digitRootSort(int[] a) {
 		 List <Integer> finalList = new ArrayList<>();
 		TreeMap<Integer, List<Integer>> tm = new TreeMap<Integer, List<Integer>>();
@@ -14,7 +16,6 @@ public  Integer[] digitRootSort(int[] a) {
 				}
 			} else {
 				sum = sum(a[i]);
-				//System.out.println("sum is " + sum);
 				if (tm.containsKey(sum)) {
 					tm.get(sum).add(a[i]);
 					Collections.sort(tm.get(sum));
@@ -37,7 +38,7 @@ public  Integer[] digitRootSort(int[] a) {
 		// or equal to 9
 		while (n > 0 || root > 9) {
 			if (n == 0) {
-				n = root;
+				n = root; //this is the best one so far:
 				root = 0;
 			}
 			root += n % 10;
